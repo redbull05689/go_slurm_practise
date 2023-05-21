@@ -8,8 +8,8 @@ func main() {
 	var n int
 	fmt.Println("Set length of array")
 	fmt.Scan(&n)
-	nums(n)
-	doubleDetector(nums []int)
+	// nums(n)
+	doubleDetector(nums(n))
 }
 
 func nums(n int) []int {
