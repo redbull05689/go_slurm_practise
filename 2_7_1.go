@@ -34,7 +34,7 @@ Task:
 	и false, если каждый элемент различен.
 Roadmap:
 	1)make array
-	2)get array as an input to finction
+	2)get array as an input to function
 	3) run doubleDetector
 	4) print tesult
 */

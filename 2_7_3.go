@@ -1,20 +1,31 @@
 package main
 
-type char_count struct {
-	value int
-	char  string
-}
+import (
+	"fmt"
+	"strconv"
+	"strings"
+	"unicode"
+)
 
 func main() {
-	word := "wsdvsdk sd sdf hsdvh sdv sd"
+	word := "Hello Go"
 	stringStat(word)
 }
 
-func stringStat(word string) string {
-	for _, v := range word {
-		chars_in_struct := char_count{v}
+func stringStat(word string) {
+	tt := make(map[string]int)
+	for _, c := range strings.ToLower(word) {
+		if unicode.IsLetter(c) {
+			char := strconv.QuoteRune(c)
+			if val, ok := tt[char]; ok {
+				val++
+				tt[char] = val
+			} else {
+				tt[char] = 1
+			}
+		}
 	}
-	return chars_in_struct
+	fmt.Println(fmt.Sprintf("Map: %v", tt))
 }
 
 /*
